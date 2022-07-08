@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "444404535598",
+    "project_id": "radioquranwolves",
+    "storage_bucket": "radioquranwolves.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444404535598:android:6492a9e1f6523478632abf",
+        "android_client_info": {
+          "package_name": "com.example.quran_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "444404535598-ksqeqg1b6j1a4162pc2rd8d60stgt7e9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWSLSwpEqDMoeF98v73eqlR4wlUmin5Ec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "444404535598-ksqeqg1b6j1a4162pc2rd8d60stgt7e9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444404535598:android:aefece28f45f639b632abf",
+        "android_client_info": {
+          "package_name": "com.example.quran_web"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "444404535598-ksqeqg1b6j1a4162pc2rd8d60stgt7e9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWSLSwpEqDMoeF98v73eqlR4wlUmin5Ec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "444404535598-ksqeqg1b6j1a4162pc2rd8d60stgt7e9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
