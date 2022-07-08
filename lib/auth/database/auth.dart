@@ -2,7 +2,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quran_web/member_page.dart';
+import 'package:quran_web/memebrs/member_page.dart';
 import 'package:quran_web/providers/circularprogressindicatorvalue.dart';
 import 'package:quran_web/widgets/constant.dart';
 import 'package:quran_web/widgets/customdialog.dart';

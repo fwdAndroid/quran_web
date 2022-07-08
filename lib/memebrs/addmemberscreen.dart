@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:quran_web/auth/database/database.dart';
-import 'package:quran_web/member_page.dart';
+import 'package:quran_web/memebrs/member_page.dart';
 import 'package:quran_web/widgets/text_input_field.dart';
 
 class AddMemberScreen extends StatefulWidget {
@@ -44,7 +44,7 @@ class _AddMemberScreenState extends State<AddMemberScreen> {
         ),
       );
     } else {
-      showInSnackBar('Some Error Occured!');
+      print('object');
     }
   }
   void selectImage() async {
@@ -107,7 +107,7 @@ class _AddMemberScreenState extends State<AddMemberScreen> {
                   ),
                   TextInputField(
                     controller: _titleController,
-                    labelText: 'Title',
+                    labelText: 'Presenter Name',
                     icon: Icons.title,
                   ),
                   SizedBox(

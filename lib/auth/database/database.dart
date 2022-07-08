@@ -4,7 +4,7 @@ import 'dart:typed_data';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:quran_web/member_model.dart';
+import 'package:quran_web/memebrs/member_model.dart';
 
 class Database{
  final FirebaseStorage _firebaseStorage = FirebaseStorage.instance;

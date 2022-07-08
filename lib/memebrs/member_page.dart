@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:quran_web/addmemberscreen.dart';
+import 'package:quran_web/memebrs/addmemberscreen.dart';
 import 'package:quran_web/widgets/members_widget.dart';
 
 class MemberPagers extends StatefulWidget {
@@ -17,6 +17,7 @@ class _MemberPagersState extends State<MemberPagers> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('Members'),
       ),
       body: FutureBuilder(
