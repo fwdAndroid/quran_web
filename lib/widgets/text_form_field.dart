@@ -6,7 +6,7 @@ class TextFormInputField extends StatelessWidget {
   final String hintText;
   final TextInputType textInputType;
   
-  const TextFormInputField({ Key? key, required this.controller, this.isPass = false,required this.hintText,required this.textInputType,  }) : super(key: key);
+  const TextFormInputField({ Key? key, required this.controller, this.isPass = false,required this.hintText,required this.textInputType }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,40 +1,61 @@
+
+
 import 'dart:typed_data';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:quran_web/auth/database/membersmodels.dart';
-import 'package:quran_web/auth/database/storage_methods.dart';
-import 'package:uuid/uuid.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:quran_web/member_model.dart';
 
 class Database{
- 
- //Upload PostImage to Firestore
-  Future<String> addMemebrsUser(
-    {required Uint8List file,required String bio,
-     required String name}) async {
-    String res = "Some Error";
+ final FirebaseStorage _firebaseStorage = FirebaseStorage.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
+  Future<String> uploadNews(
+      {required String title,
+      required String description,
+      required String date,
+      required Uint8List file}) async {
+    String res = 'Some error occured.';
     try {
-      String photoUrl =
-          await StorageMethods().uploadImageToStorage("profileImages", file, true);
+      if (title.isNotEmpty || file != null) {
+        String photoUrl = await uploadImageToStorage(
+          'Members',
+          file,
+        );
 
-      String uid = Uuid().v1();
-      MembersModel postModel = MembersModel(
-          bio: bio,
-          uid: uid,
-          name: name, 
-          photoURL: photoUrl,);
+        MemberModel commit = MemberModel(
+          title: title,
+          description: description,
+          date: date,
+          photoUrl: photoUrl,
+        );
 
-      ///Uploading Post To Firebase
-      FirebaseFirestore.instance
-          .collection('members')
-          .doc(uid)
-          .set(postModel.toJson());
-      res = 'Sucessfully Uploaded in Firebase';
-    } catch (e) {
-      res = e.toString();
+        _firestore.collection('members').doc().set(
+              commit.toJson(),
+            );
+        res = 'Success';
+      }
+    } catch (error) {
+      res = error.toString();
     }
-
     return res;
   }
+
+  Future<String> uploadImageToStorage(
+    String childName,
+    Uint8List file,
+  ) async {
+    Reference ref = _firebaseStorage
+        .ref()
+        .child(childName)
+        .child(DateTime.now().toIso8601String());
+
+    UploadTask uploadTask = ref.putData(file);
+
+    TaskSnapshot taskSnapshot = await uploadTask;
+    String downloadUrl = await taskSnapshot.ref.getDownloadURL();
+    return downloadUrl;
+  }
+ 
 
 }
